@@ -1,0 +1,13 @@
+docker run --name webdev-mongo -d mongo --auth
+docker exec -it webdev-mongo mongo admin
+db.getName();
+
+docker run --name webdev-redis -d redis
+docker run -it --link webdev-redis:redis --rm redis redis-cli -h redis -p 6379
+ping
+INFO
+set cool-group webdev
+get cool-group
+
+docker run --name webdev-cassandra -d cassandra
+docker exec -it webdev-cassandra cqlsh

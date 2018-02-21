@@ -1,0 +1,28 @@
+docker pull alpine
+docker pull alpine:3.6
+
+docker run alpine cat //etc/alpine-release
+docker run alpine:3.6 cat //etc/alpine-release
+docker run alpine:3.5 cat //etc/alpine-release
+
+docker run -it alpine sh
+
+-- show docker ps name
+-- use touch to show file system is ephemeral
+
+docker run --name alpineA --rm -it alpine sh
+-- docker ps to give it a name
+-- touch a file
+docker exec -it alpineA sh
+-- ls to show the file is visible
+-- touch another file
+-- switch back to main thread and ls to see the newly created file
+
+docker inspect alpineA
+docker logs alpineA -f
+
+volumes
+docker run -it -v $PWD://webdev alpine sh
+-- open folder browser and ls to show the same list
+-- touch in the container to add a file and show that it is in the folder browser
+-- create a new file and ls to show that it is visible in the container

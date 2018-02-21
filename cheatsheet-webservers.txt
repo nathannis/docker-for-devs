@@ -1,0 +1,3 @@
+docker run -d --name webdev-apache-app -p 8082:80 -v ${PWD}:/usr/local/apache2/htdocs/ httpd:2.4
+
+docker run -d --name webdev-nginx-app -p 8083:80 -v ${PWD}:/usr/share/nginx/html/ nginx

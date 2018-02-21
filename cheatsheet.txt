@@ -1,0 +1,6 @@
+# general searching for a container
+docker ps -a | grep webdev
+# clean up the named webdev containers
+docker rm $(docker ps -a | grep webdev | cut -c1-10)
+# clean up the named alpine containers
+docker rm $(docker ps -a | grep alpine | cut -c1-10)

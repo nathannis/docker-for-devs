@@ -1,0 +1,9 @@
+docker run -d --name webdev-mysql -p 3310:3306 -e MYSQL_ROOT_PASSWORD=mysql-pw mysql
+docker exec -it webdev-mysql mysql -p
+
+docker run -d --name webdev-mariadb -p 3312:3306 -e MYSQL_ROOT_PASSWORD=mariadb-pw mariadb
+docker exec -it webdev-mariadb mysql -p
+
+docker run -d --name webdev-postgres -e POSTGRES_PASSWORD=postgres-pw postgres
+docker exec -it webdev-postgres psql --username postgres
+https://www.ntu.edu.sg/home/ehchua/programming/sql/PostgreSQL_GetStarted.html

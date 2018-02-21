@@ -1,0 +1,29 @@
+PHP
+docker run -v ${PWD}://webdev php:7.0-cli php //webdev/HelloWorld.php
+
+docker run -d -p 8081:80 --name webdev-apache-php-app -v ${PWD}://var/www/html php:7.0-apache
+docker ps -- to show that it is running
+http://localhost:8081/HelloHTML.php
+
+
+Python
+docker run -it python:2.7 python -i
+print "Hello, webdev from python 2.7"
+docker run -it python:3.5 python -i
+print("Hello, webdev from python 3.5")
+docker run -it python:3.6 python -i
+print "Hello, webdev from python 3.6"
+
+docker run -v ${PWD}://webdev python:3.5 python //webdev/HelloWorld.py
+
+Go
+docker run --rm -v ${PWD}://usr/src/myapp -w //usr/src/myapp golang:1.8 go run HelloWorld.go
+
+.Net Core
+dotnet new webdevcore
+cd webdevcore
+-- change the console.WriteLine message
+-- copy over the docker file
+docker build -t webdevcore .
+docker run -it webdevcore
+
